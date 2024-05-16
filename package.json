@@ -4,13 +4,22 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Bavornthat Dangtang",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "3.6",
+    "mongoose": "^8.3.2",
     "nodemon": "^3.1.0"
   }
 }
